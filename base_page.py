@@ -28,6 +28,9 @@ class BasePage():
     def enter_text(self, locator_type, locator_value, text):
         self.driver.find_element(locator_type, locator_value).send_keys(text)
 
+    def upload_File(self, locator_type, locator_value, path):
+        self.driver.find_element(locator_type, locator_value).send_keys(path)
+
     def assert_Text(self, locator_type, locator_value, asserting_text):
         text = self.driver.find_element(locator_type, locator_value).text
         assert text == asserting_text

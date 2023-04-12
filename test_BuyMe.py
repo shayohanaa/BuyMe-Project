@@ -26,14 +26,14 @@ class setUp(TestCase):
         self.extras = Extra(self.driver)
 
     def test_BuyMe(self):
-        # self.homepage.signUp()
-        # self.login.Login()
+        # self.homepage.signUp() # test turned off by default
+        # self.login.Login() # test turned off by default
         self.login.fulfillGift()
         self.login.Gift()
-        # self.extras.Loading()
-        # self.extras.errorMessage()
-        # self.extras.giftScreen()
-        # self.extras.info_Screen()
+        self.extras.Loading()
+        self.extras.errorMessage()
+        self.extras.giftScreen()
+        self.extras.info_Screen()
 
     def tearDown(self):
         self.driver.quit()

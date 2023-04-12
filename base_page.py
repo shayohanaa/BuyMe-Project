@@ -19,17 +19,11 @@ class BasePage():
     def scroll_down_end(self):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-    def scroll_up_end(self):
-        self.driver.execute_script("window.scrollTo(0, 0);")
-
     def clear_text(self, locator_type, locator_value):
         self.driver.find_element(locator_type, locator_value).clear()
 
     def enter_text(self, locator_type, locator_value, text):
         self.driver.find_element(locator_type, locator_value).send_keys(text)
-
-    def upload_File(self, locator_type, locator_value, path):
-        self.driver.find_element(locator_type, locator_value).send_keys(path)
 
     def assert_Text(self, locator_type, locator_value, asserting_text):
         text = self.driver.find_element(locator_type, locator_value).text

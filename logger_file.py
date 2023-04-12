@@ -6,9 +6,10 @@ logger.setLevel(logging.DEBUG)
 logging.basicConfig(
                     filename='logfile.log',
                     filemode='a',
+                    force=True,
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     datefmt='%H:%M:%S',
-                    level=logging.ERROR)
+                    level=logging.DEBUG)
 
 
 class Test_LOG(TestCase):

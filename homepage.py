@@ -98,7 +98,7 @@ class Login(BasePage):
         self.scroll_down_end()
         self.enter_text(By.CSS_SELECTOR, 'input[type=text]', 'John Doe')
         allure.attach(self.driver.get_screenshot_as_png(), name="Receiver", attachment_type=allure.attachment_type.PNG)
-        # self.assert_Text(By.CSS_SELECTOR, 'input[type=text]', 'John Doe')
+        self.assert_Text(By.CSS_SELECTOR, 'input[type=text]', 'John Doe')
         self.driver.get("https://buyme.co.il")
 
 
@@ -130,19 +130,16 @@ class Extra(BasePage):
         self.click_element(By.ID, 'ember1053')
         WebDriverWait(self.driver, 5).until(
             expected_conditions.element_to_be_clickable((By.ID, "ember1076")))
-        # self.wait(By.ID, "ember1076", 5)
         self.click_element(By.ID, 'ember1076')
 
         self.click_element(By.ID, 'ember1088')
         WebDriverWait(self.driver, 5).until(
             expected_conditions.element_to_be_clickable((By.ID, 'ember1111')))
-        # self.wait(By.ID, "ember1111", 5)
         self.click_element(By.ID, 'ember1111')
 
         self.click_element(By.ID, 'ember1120')
         WebDriverWait(self.driver, 5).until(
             expected_conditions.element_to_be_clickable((By.ID, "ember1171")))
-        # self.wait(By.ID, "ember1171", 5)
         self.click_element(By.ID, 'ember1171')
         self.scroll_down_end()
         allure.attach(self.driver.get_screenshot_as_png(), name="giftScreen", attachment_type=allure.attachment_type.PNG)

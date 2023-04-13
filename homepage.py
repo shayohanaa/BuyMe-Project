@@ -73,7 +73,7 @@ class Login(BasePage):
         allure.attach(self.driver.get_screenshot_as_png(), name="Type", attachment_type=allure.attachment_type.PNG)
         get_url = self.driver.current_url
         print(get_url)
-        assert get_url == "https://buyme.co.il/search?budget=2&category=438&region=13"
+        assert get_url == "https://buyme.co.il/search?budget=2&category=438&region=11"
         self.click_element(By.PARTIAL_LINK_TEXT, "Claro")
         self.driver.implicitly_wait(2)
         self.enter_text(By.CSS_SELECTOR, 'input[inputmode=decimal]', '150')

@@ -14,9 +14,9 @@ class setUp(TestCase):
         data = json.load(json_file)
         browser = data['browserType']
         if browser == 'chrome':
-            self.driver = webdriver.Chrome(service=Service('C://Users/shayo/chromedriver_win32/chromedriver.exe'))
+            self.driver = webdriver.Chrome(service=Service('<CHROMEDRIVER_PATH>'))
         elif browser == 'firefox':
-            self.driver = webdriver.Firefox(service=Service('FIREFOXDRIVER_PATH'))
+            self.driver = webdriver.Firefox(service=Service('<FIREFOXDRIVER_PATH>'))
 
         url = data['url']
         self.driver.get(url)

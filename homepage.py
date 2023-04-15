@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from base_page import BasePage
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-import time
 import json
 import allure
 
@@ -25,7 +24,7 @@ class HomePage(BasePage):
         self.enter_text(By.ID, 'ember1900', Constants.Pass)
         self.click_element(By.CLASS_NAME, 'fill')
         self.click_element(By.ID, 'ember1910')
-        name = self.find_element(By.ID, 'ember1879')
+        name = self.find_element(By.ID, 'ember1879').text
         assert name == "John Doe"
 
 

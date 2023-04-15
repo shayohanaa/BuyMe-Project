@@ -2,8 +2,6 @@ from selenium.webdriver.common.by import By
 from base_page import BasePage
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-import time
-import json
 import allure
 from allure_commons.types import AttachmentType
 
@@ -19,6 +17,7 @@ class HomePage(BasePage):
 
     def signUp(self):
         self.click_element(By.CLASS_NAME, 'notSigned')
+        self.driver.implicitly_wait(5)
         self.click_element(By.CLASS_NAME, "text-link")
         self.enter_text(By.ID, 'ember1875', 'Shay')
         self.enter_text(By.ID, 'ember1882', Constants.User)
@@ -26,7 +25,7 @@ class HomePage(BasePage):
         self.enter_text(By.ID, 'ember1896', Constants.Pass)
         self.click_element(By.CLASS_NAME, 'fill')
         self.click_element(By.ID, 'ember1906')
-        self.assert_Text(By.CSS_SELECTOR, 'input[type=text]', 'Shay')
+        self.assert_Text(By.ID, 'ember1875', 'Shay')
 
 
 class Login(BasePage):
@@ -80,7 +79,7 @@ class Login(BasePage):
         self.scroll_down_end()
         self.clear_text(By.XPATH, '//form/div[2]/div[4]/label/textarea')
         self.enter_text(By.XPATH, '//form/div[2]/div[4]/label/textarea', 'Happy birthday.')
-        self.driver.find_element(By.CSS_SELECTOR, "input[name=logo]").send_keys("<PICTURE PATH>")
+        # self.driver.find_element(By.CSS_SELECTOR, "input[name=logo]").send_keys("C:\\Users\\shayo\\passover.png")
         allure.attach(self.driver.get_screenshot_as_png(), name="Blessings", attachment_type=allure.attachment_type.PNG)
         self.driver.implicitly_wait(5)
         self.click_element(By.CSS_SELECTOR, 'button[type=submit]')
@@ -91,8 +90,7 @@ class Login(BasePage):
         self.enter_text(By.CSS_SELECTOR, 'input[type=text]', 'John Doe')
         allure.attach(self.driver.get_screenshot_as_png(), name="Receiver", attachment_type=allure.attachment_type.PNG)
         self.assert_Text(By.CSS_SELECTOR, 'input[type=text]', 'John Doe')
-        content = self.driver.find_element(By.CSS_SELECTOR, 'input[type="text"]]').text
-        print(content)
+
 
 
 class Extra(BasePage):

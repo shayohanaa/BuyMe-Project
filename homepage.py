@@ -90,7 +90,7 @@ class Login(BasePage):
         self.scroll_down_end()
         self.enter_text(By.CSS_SELECTOR, 'input[type=text]', 'John Doe')
         allure.attach(self.driver.get_screenshot_as_png(), name="Receiver", attachment_type=allure.attachment_type.PNG)
-        # self.assert_Text(By.CSS_SELECTOR, 'input[type=text]', 'John Doe')
+        self.assert_Text(By.CSS_SELECTOR, 'input[type=text]', 'John Doe')
         content = self.driver.find_element(By.CSS_SELECTOR, 'input[type="text"]]').text
         print(content)
 

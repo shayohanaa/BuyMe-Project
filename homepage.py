@@ -16,16 +16,15 @@ class HomePage(BasePage):
         BasePage.__init__(self, driver)
 
     def signUp(self):
-        self.click_element(By.XPATH, '//*[@id="ember1006"]/div/ul[1]/li[3]/a')
-        self.click_element(By.XPATH, "//div[1]/div/div/div[3]/div[1]/span")
-        self.enter_text(By.ID, 'ember1879', 'Shay')
-        self.enter_text(By.ID, 'ember1886', Constants.User)
+        self.click_element(By.CLASS_NAME, 'notSigned')
+        self.click_element(By.CLASS_NAME, "text-link")
+        self.enter_text(By.ID, 'ember1875', 'Shay')
+        self.enter_text(By.ID, 'ember1882', Constants.User)
         self.enter_text(By.ID, 'valPass', Constants.Pass)
-        self.enter_text(By.ID, 'ember1900', Constants.Pass)
+        self.enter_text(By.ID, 'ember1896', Constants.Pass)
         self.click_element(By.CLASS_NAME, 'fill')
-        self.click_element(By.ID, 'ember1910')
-        name = self.find_element(By.ID, 'ember1879').text
-        assert name == "John Doe"
+        self.click_element(By.ID, 'ember1906')
+        self.assert_Text(By.CSS_SELECTOR, 'input[type=text]', 'Shay')
 
 
 class Login(BasePage):

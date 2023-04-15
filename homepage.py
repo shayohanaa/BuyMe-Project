@@ -79,7 +79,7 @@ class Login(BasePage):
         self.scroll_down_end()
         self.clear_text(By.XPATH, '//form/div[2]/div[4]/label/textarea')
         self.enter_text(By.XPATH, '//form/div[2]/div[4]/label/textarea', 'Happy birthday.')
-        # self.driver.find_element(By.CSS_SELECTOR, "input[name=logo]").send_keys("C:\\Users\\shayo\\passover.png")
+        self.driver.find_element(By.CSS_SELECTOR, "input[name=logo]").send_keys("<PIC_PATH>")
         allure.attach(self.driver.get_screenshot_as_png(), name="Blessings", attachment_type=allure.attachment_type.PNG)
         self.driver.implicitly_wait(5)
         self.click_element(By.CSS_SELECTOR, 'button[type=submit]')

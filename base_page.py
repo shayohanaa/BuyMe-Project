@@ -26,5 +26,6 @@ class BasePage():
         self.driver.find_element(locator_type, locator_value).send_keys(text)
 
     def assert_Text(self, locator_type, locator_value, asserting_text):
-        text = self.driver.find_element(locator_type, locator_value).text
-        assert text == asserting_text
+        input_element = self.driver.find_element(locator_type, locator_value)
+        input_text = input_element.get_attribute("value")
+        assert input_text == asserting_text

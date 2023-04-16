@@ -110,7 +110,8 @@ class Extra(BasePage):
         self.wait(By.XPATH, '//header/div[1]/div/ul[1]/li[3]', 10)
         self.click_element(By.XPATH, '//header/div[1]/div/ul[1]/li[3]')
         self.click_element(By.XPATH, '//form/button')
-        self.assert_Text(By.CLASS_NAME, 'parsley-required', 'כל המתנות מחכות לך! אבל קודם צריך מייל וסיסמה')
+        text = self.driver.find_element(By.CLASS_NAME, 'parsley-required').text
+        assert text == "כל המתנות מחכות לך! אבל קודם צריך מייל וסיסמה"
 
     def giftScreen(self):
         self.driver.get("https://buyme.co.il")

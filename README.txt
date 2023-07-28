@@ -1,4 +1,6 @@
+Test includes:
 
-Default - ההרשמה וההתחברות לאתר כבויות כ
-האתר מבקש ממני לאמת את עצמי כל פעם שהטסט מנסה להתחבר לאתר.
-ובהרשמה אני לא רוצה להספים
+1. Register & Login tests.
+2. Gift fulfillments.
+3. Choosing specific gift and send it to a friend.
+4. Extra - Checking dimmensions

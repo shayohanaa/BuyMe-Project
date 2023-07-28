@@ -1,3 +1,5 @@
+Units test with Chrome / Firefox
+
 Test includes:
 
 1. Register & Login tests.
